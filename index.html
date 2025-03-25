@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - M02</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+         img.innovation-image {
+            max-width: 400px; /* Adjust as needed */
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            var selectedTime = document.getElementById('time-select').value;
+            var activities = document.getElementsByClassName('activity');
+
+            document.getElementById('selected-time').innerText = "Tiempo efectivo de clase: " + selectedTime + " minutos";
+
+            for (var i = 0; i < activities.length; i++) {
+                activities[i].style.display = 'block';
+            }
+
+            // This mission structure differs, adjust based on time if needed, but keeping all activities for now.
+            // if (selectedTime === '45') { }
+            // if (selectedTime === '40') { }
+        }
+
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="header">
+    <h1>Playbook - M02</h1>
+</div>
+
+<div class="container">
+    <div class="dropdown">
+        <label for="time-select">Tiempo efectivo de Clase:</label>
+        <select id="time-select" onchange="updateActivities()">
+            <option value="50">50 minutos</option>
+            <option value="45">45 minutos</option>
+            <option value="40">40 minutos</option>
+        </select>
+    </div>
+
+    <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 40 minutos</h2>
+
+    <!-- -------------------------------------------------Espacio para Actividades --------------------------------------------------------- -->
+
+    <!-- Actividad 1 -->
+    <div id="activity-1" class="activity">
+        <div class="banner" onclick="toggleContent('recap')">
+            <div class="title">🔄 Actividad 1: Recapitulación Rápida ⏰ Tiempo: 3 minutos</div>
+            <div class="subtitle">Recordando nuestro punto de partida.</div>
+        </div>
+        <div id="recap" class="content">
+            <table>
+                <tr>
+                    <td><strong>PASO 1 (1 minuto):</strong> Proyectar Diapositiva 2 "Recordando M00".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Genios, bienvenidos de nuevo! Antes de sumergirnos en la misión de hoy, hagamos una breve parada técnica. En nuestra primera misión, M00, nos presentamos, hablamos de cómo aprenderemos juntos (recuerden el Cohort Learning y las 4 P's) y dimos un primer vistazo al universo de la IA: qué es, cómo funciona el NLP, el Deep Learning y los LLMs, y hasta dónde podría llegar con la AGI y ASI. ¿Alguien recuerda la analogía que usamos para explicar los Transformer Models?"</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 2 (1.5 minutos):</strong> Proyectar Diapositiva 3 "Reforzando M01".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Luego, en la Misión 1, nos metimos de lleno en el futuro del trabajo. Analizamos cómo la IA no es solo una herramienta más, sino un agente de cambio capaz de razonar y tomar decisiones, como vimos con las historias del Captcha y las IA de Reddit. Hablamos de la velocidad de esta transformación, de los empleos que se pierden y los que se crean, de la importancia de la alfabetización en IA y de las habilidades clave que nos harán destacar: adaptabilidad, pensamiento crítico, creatividad... ¿Qué habilidad les pareció la más crucial para ustedes?"</td>
+                </tr>
+                 <tr>
+                    <td><strong>PASO 3 (0.5 minutos):</strong> Proyectar Diapositiva 4 "Conectando con Hoy".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Perfecto. Con esa base sólida, hoy vamos a ver cómo estas transformaciones se están materializando *ahora mismo* en diferentes industrias. ¡Abróchense los cinturones!"</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Actividad 2 -->
+    <div id="activity-2" class="activity">
+        <div class="banner" onclick="toggleContent('noticias_ia')">
+            <div class="title">📰 Actividad 2: Noticiero IA Express ⏰ Tiempo: 15 minutos</div>
+            <div class="subtitle">Las últimas noticias del frente de la Inteligencia Artificial.</div>
+        </div>
+        <div id="noticias_ia" class="content">
+            <table>
+                <tr>
+                    <td><strong>PASO 1 (1 minuto):</strong> Proyectar Diapositiva 5 "¡Bienvenidos al Noticiero IA!".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "(Adoptando un tono de presentador de noticias, ligeramente satírico) ¡Buenas tardes, Genios! Bienvenidos a su Noticiero IA Express, donde les traemos las noticias que están *definiendo* el futuro, ¡justo ahora! Olvídense de la política y los deportes por un momento, porque la verdadera revolución está sucediendo en el mundo de los unos y ceros. ¡Vamos con los titulares!"</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 2 (4 minutos):</strong> Proyectar Diapositiva 6 "Noticia 1: Alibaba y el Detector de Emociones".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Y nuestra primera nota viene desde China. El gigante Alibaba, sí, ese de las compras en línea, ha desarrollado una IA llamada R1-OMNI que, agárrense, ¡puede leer sus emociones en un video! Ya no solo detecta si están felices o enojados, no señor. Esta IA analiza su lenguaje corporal, el tono de su voz, ¡hasta lo que llevan puesto!, para obtener una radiografía emocional completa. Imaginen las posibilidades... ¿publicidad que se adapta a su estado de ánimo? ¿Entrevistas de trabajo donde la IA sabe si están nerviosos? Es como tener un polígrafo visual, pero mucho más sofisticado. Alibaba dice que es un gran avance en la 'IA emocional'. Nosotros decimos... ¡qué miedo! ¿O será fascinante? ¡Ustedes juzguen!"</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 3 (4 minutos):</strong> Proyectar Diapositiva 7 "Noticia 2: Google y los Robots con Gemini". (Mostrar video corto de demostración)</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Cambiamos de continente y nos vamos con Google. Han anunciado 'Gemini Robotics'. ¿Se acuerdan que hablamos de LLMs, esos modelos que entienden el lenguaje? Bueno, Google ha ido un paso más allá. Han creado un VLA: Vision-Language-Action model. ¡Tranquilos, no es otro examen! Significa que esta IA no solo *ve* y *entiende*, sino que *actúa* en el mundo físico. ¡Controla robots! Imaginen un robot que entiende órdenes como 'tráeme un café', pero no solo eso, sino que *ve* la taza, *entiende* cómo agarrarla sin romperla, y *ejecuta* la acción. ¡Y se adapta si algo cambia! Google está colaborando con Apptronik para crear robots humanoides con este 'cerebro'. El futuro de los robots asistentes ya no es ciencia ficción. ¡Aquí tienen una probadita de lo que pueden hacer! (Mostrar video)"</td>
+                </tr>
+                 <tr>
+                    <td><strong>PASO 4 (5 minutos):</strong> Proyectar Diapositiva 8 "Noticia 3: Mirage y los Influencers Inexistentes". (Mostrar video corto de demostración)</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Y para cerrar, una noticia que nos deja boquiabiertos. ¿Conocen esos videos virales de TikTok, con gente recomendando productos, contando historias, haciendo bailes? Bueno, prepárense. Una nueva IA llamada Mirage, de la empresa Captions, puede generar videos *idénticos* a esos, ¡pero con personas que no existen! No son actores, no son avatares de videojuegos, son creaciones 100% artificiales, con expresiones faciales, lenguaje corporal, ¡todo! Le das un guion, eliges cómo quieres que se vea el 'influencer', el fondo, la ropa, ¡hasta la emoción!, y Mirage crea el video. Piensen en el impacto para la publicidad, el marketing, ¡incluso para las noticias falsas! ¿Podremos distinguir entre un humano real y una creación de IA en el futuro cercano? Esta noticia plantea preguntas profundas sobre la realidad y la autenticidad en la era digital. ¡Juzguen ustedes mismos con este video! (Mostrar video)"</td>
+                </tr>
+                 <tr>
+                    <td><strong>PASO 5 (1 minuto):</strong> Proyectar Diapositiva 9 "Reflexión Final del Noticiero".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Y esas fueron las noticias de hoy en su Noticiero IA Express. Como ven, la IA no se detiene. Está leyendo nuestras emociones, entrando en el mundo físico y creando realidades alternativas. Esto nos lleva directamente a nuestro próximo desafío: entender cómo esta revolución impactará las industrias que a ustedes les interesan. ¡No le cambien!"</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+     <!-- Actividad 3 -->
+    <div id="activity-3" class="activity">
+        <div class="banner" onclick="toggleContent('intro_chatgpt')">
+            <div class="title">💬 Actividad 3: Mini-Intro a ChatGPT/Gemini ⏰ Tiempo: 2 minutos</div>
+            <div class="subtitle">Perdiéndole el miedo a hablar con la IA.</div>
+        </div>
+        <div id="intro_chatgpt" class="content">
+            <table>
+                <tr>
+                    <td><strong>PASO 1 (2 minutos):</strong> Proyectar Diapositiva 10 "Chateando con la IA".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Sé que algunos de ustedes nunca han usado herramientas como ChatGPT o Gemini, y puede parecer intimidante. Pero quiero que recuerden algo fundamental: estas herramientas están diseñadas para ser *conversacionales*. Piensen en ellas como un chat, como hablar con un amigo (un amigo muy, muy informado). No necesitan saber código ni ser expertos en tecnología. Lo más importante es preguntar, experimentar, ser curiosos. Si bien hay técnicas avanzadas para sacarles el máximo provecho (y las veremos más adelante), la forma más sencilla de empezar es simplemente... chatear. Hagan preguntas, pídanle cosas, vean cómo responde. ¡No tengan miedo de 'hablar' con la máquina!"</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Actividad 4 -->
+    <div id="activity-4" class="activity">
+        <div class="banner" onclick="toggleContent('challenge')">
+            <div class="title">🚀 Actividad 4: Challenge - El Futuro de tu Industria ⏰ Tiempo: 18 minutos</div>
+            <div class="subtitle">Investigando la transformación industrial con IA.</div>
+        </div>
+        <div id="challenge" class="content">
+            <table>
+                <tr>
+                    <td><strong>PASO 1 (1 minuto):</strong> Proyectar Diapositiva 11 "Título del Challenge: El Futuro de tu Industria".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Genios, llegó el momento del Challenge! Ya vimos cómo la IA está cambiando el mundo. Ahora, ustedes van a investigar cómo transformará una industria específica. Se convertirán en analistas de tendencias, utilizando a ChatGPT o Gemini como su asistente de investigación."</td>
+                </tr>
+                 <tr>
+                    <td><strong>PASO 2 (1 minuto):</strong> Proyectar Diapositiva 12 "Instrucciones del Challenge".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "En equipos de 3 o 4 personas, elijan una industria que les interese: videojuegos, música, cine, moda, deportes, medicina, finanzas... ¡la que quieran! Su misión es usar ChatGPT o Gemini para investigar cómo la IA impactará esa industria en los próximos 5 años. ¿Qué procesos se automatizarán? ¿Qué nuevos roles surgirán? ¿Cómo cambiará la experiencia del consumidor? Quiero que sinteticen su investigación en 3 puntos clave, 3 bullet points que resuman la transformación."</td>
+                </tr>
+                <tr>
+                    <td><strong>PASO 3 (10 minutos):</strong> Proyectar Diapositiva 13 "¡A Investigar!".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Tienen 10 minutos para trabajar en equipo. Usen ChatGPT o Gemini, hagan preguntas, pidan análisis, exploren diferentes escenarios. Recuerden lo que aprendimos: ¡chateen con la IA! Sean específicos en sus preguntas. Por ejemplo: '¿Cómo impactará la IA generativa en la industria de la animación en los próximos 5 años?' o '¿Qué nuevos roles relacionados con IA surgirán en el sector financiero?'. ¡El tiempo corre!"</td>
+                </tr>
+                 <tr>
+                   <td><strong>PASO 3.1 (0 minutos):</strong> Proyectar Diapositiva 14 "Cronómetro: 10 minutos."</td>
+                   <td><strong>DIÁLOGO SUGERIDO:</strong> "N/A."</td>
+                </tr>
+                 <tr>
+                    <td><strong>PASO 4 (6 minutos):</strong> Proyectar Diapositiva 15 "Compartiendo Hallazgos".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Tiempo! Ahora, cada equipo tendrá 2 minutos para compartir sus 3 bullet points clave sobre la transformación de la industria que eligieron. Sean concisos, claros y contundentes. Queremos tener una visión rápida de cómo la IA está redibujando el mapa industrial. (Llamar a 3 equipos para que presenten)."</td>
+                </tr>
+                <tr>
+                   <td><strong>PASO 5 (2 minutos):</strong> Proyectar Diapositiva 16 "Reflexión del Challenge".</td>
+                   <td><strong>DIÁLOGO SUGERIDO:</strong> "Excelente trabajo. ¿Qué les pareció usar la IA para investigar? ¿Fue fácil obtener la información? ¿Los resultados los sorprendieron? ¿Cómo creen que esta habilidad de investigar con IA les puede servir en el futuro, no solo en este curso, sino en sus carreras? (Fomentar una breve discusión)."</td>
+               </tr>
+                 <tr>
+                   <td><strong>PASO 6 (0.5 minutos):</strong> Proyectar Diapositiva 17 "I Can Statement: Reflexión".</td>
+                   <td><strong>DIÁLOGO SUGERIDO:</strong> "Recuerden que nuestro objetivo en la Misión 1 era poder 'analizar cómo la IA transforma el mundo laboral e identificar habilidades clave'. Con la recapitulación y este challenge, hemos reforzado esa capacidad. Ahora, no solo entienden el impacto general, sino que han empezado a investigar cómo afecta a industrias específicas. ¡Están construyendo las bases de su futuro profesional!"</td>
+               </tr>
+               <tr>
+                   <td><strong>PASO 7 (0.5 minutos):</strong> Proyectar Diapositiva 18 "You've got Mon-e: Recompensa por el Esfuerzo".</td>
+                   <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Felicidades por completar este desafío y por su excelente trabajo de investigación en equipo! Aquí tienen su Mon-e."</td>
+               </tr>
+
+            </table>
+        </div>
+    </div>
+
+
+   <!-- Actividad 5 -->
+    <div id="activity-5" class="activity">
+        <div class="banner" onclick="toggleContent('reflexion_final')">
+            <div class="title">🤔 Actividad 5: Reflexión Final ⏰ Tiempo: 2 minutos</div>
+            <div class="subtitle">Cerrando la misión y conectando los puntos.</div>
+        </div>
+        <div id="reflexion_final" class="content">
+            <table>
+                <tr>
+                    <td><strong>PASO 1 (2 minutos):</strong> Proyectar Diapositiva 19 "Conclusiones y Próximos Pasos".</td>
+                    <td><strong>DIÁLOGO SUGERIDO:</strong> "Genios, hoy hemos visto ejemplos concretos de cómo la IA está avanzando a pasos agigantados y transformando industrias enteras. Desde leer emociones hasta controlar robots y crear influencers virtuales, la IA ya no es una promesa, es una realidad tangible. Y lo más importante es que ustedes están aprendiendo a navegar en este nuevo océano de posibilidades. ¿Qué idea o noticia les impactó más hoy? ¿Qué se llevan de esta misión? Recuerden, el futuro no es algo que nos pasa, es algo que construimos. Y con las herramientas y el conocimiento que están adquiriendo, ustedes tienen el poder de ser arquitectos de ese futuro. ¡Nos vemos en la Misión 3!"</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------Espacio para Actividades --------------------------------------------------------- -->
+
+</div>
+
+</body>
+</html>
